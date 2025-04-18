@@ -1,0 +1,9 @@
+﻿<RengaPlugin>
+	<Name>ButtonsNet8</Name>
+	<Version>1.0</Version>
+	<Copyright>Pavel Karpovich</Copyright>
+	<RequiredAPIVersion>2.30</RequiredAPIVersion>
+	<PluginType>net8</PluginType>
+	<PluginFilename>C:\other\mygithub\RengaProjects\RengaAPISamples\plugins\ButtonsNet8\bin\Debug\net8.0\ButtonsNet8.dll</PluginFilename> 
+	<Vendor>Pavel Karpovich</Vendor>
+</RengaPlugin>
