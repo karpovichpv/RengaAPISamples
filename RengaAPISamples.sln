@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{6EEF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamplePluginNetFramework", "plugins\SamplePluginNetFramework\SamplePluginNetFramework.csproj", "{19441A0B-ACC4-4623-B1AE-B9FA95FB0DCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamplePluginNet8", "plugins\SamplePluginNet8\SamplePluginNet8.csproj", "{B318E7AF-DF31-4C6B-B0D2-1F7877B9F102}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{19441A0B-ACC4-4623-B1AE-B9FA95FB0DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19441A0B-ACC4-4623-B1AE-B9FA95FB0DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19441A0B-ACC4-4623-B1AE-B9FA95FB0DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B318E7AF-DF31-4C6B-B0D2-1F7877B9F102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B318E7AF-DF31-4C6B-B0D2-1F7877B9F102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B318E7AF-DF31-4C6B-B0D2-1F7877B9F102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B318E7AF-DF31-4C6B-B0D2-1F7877B9F102}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{19441A0B-ACC4-4623-B1AE-B9FA95FB0DCD} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
+		{B318E7AF-DF31-4C6B-B0D2-1F7877B9F102} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F88347E4-EB29-4AE1-A675-D822226ED20F}
