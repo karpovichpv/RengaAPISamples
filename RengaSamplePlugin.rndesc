@@ -3,7 +3,7 @@
 	<!-- Displayed plugin name -->
 	<Version>1.0</Version>
 	<!-- Plugin version -->
-	<Copyright>Copyright text</Copyright>
+	<Copyright>Pavel Karpovich</Copyright>
 	<!-- Copyright information -->
 	<RequiredAPIVersion>2.30</RequiredAPIVersion>
 	<!-- Minimum required version of Renga API -->
@@ -14,6 +14,6 @@
 	<!-- "cpp", "vcpp" or "c++" for plugins written on Visual C++. Optional, defaults to "cpp" -->
 	<PluginFilename>C:\\other\\mygithub\\RengaProjects\\RengaSamplePlugin\\bin\\Debug\\RengaSamplePlugin.dll</PluginFilename>
 	<!-- Path to the plugin's binary file, either relative to the folder containing the .rndesc file or an absolute one -->
-	<Vendor>Renga</Vendor>
+	<Vendor>Pavel Karpovich</Vendor>
 	<!-- Vendor of the plugin -->
 </RengaPlugin>
