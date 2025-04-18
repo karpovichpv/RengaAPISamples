@@ -1,9 +1,10 @@
 ﻿
 
 using Renga;
+using System.Reflection;
 using System.Windows;
 
-namespace RengaSamplePlugin
+namespace SamplePluginNetFramework
 {
 	public class Plugin : IPlugin
 	{
@@ -15,19 +16,20 @@ namespace RengaSamplePlugin
 			IUI ui = app.UI;
 			IUIPanelExtension panel = ui.CreateUIPanelExtension();
 			IAction button = ui.CreateAction();
-			button.ToolTip = "Тестовый плагин №1";
-			button.DisplayName = "Тестовый плагин №1";
+			string name = Assembly.GetAssembly(GetType()).FullName;
+			button.ToolTip = name;
+			button.DisplayName = name;
 
 			IImage icon = ui.CreateImage();
-			string iconPath = pluginFolder + @"\logo.png";
+			string iconPath = pluginFolder + @"\ico.png";
 			icon.LoadFromFile(iconPath);
 			button.Icon = icon;
 
 			_followAction = new ActionEventSource(button);
 			_followAction.Triggered += (sender, args) =>
 			{
-				ui.ShowMessageBox(Renga.MessageIcon.MessageIcon_Info, "Пользовательский плагин", "Привет Renga");
-				MessageBox.Show("show message box");
+				ui.ShowMessageBox(Renga.MessageIcon.MessageIcon_Info, $"{name} plugin", "Hello world!");
+				MessageBox.Show("Message box from the WPF!");
 			};
 
 

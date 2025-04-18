@@ -7,8 +7,8 @@
     <ProjectGuid>{19441A0B-ACC4-4623-B1AE-B9FA95FB0DCD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RengaSamplePlugin</RootNamespace>
-    <AssemblyName>RengaSamplePlugin</AssemblyName>
+    <RootNamespace>SamplePluginNetFramework</RootNamespace>
+    <AssemblyName>SamplePluginNetFramework</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -55,7 +55,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="RengaSamplePlugin.rndesc" />
+    <None Include="SamplePluginNetFramework.rndesc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.png">
