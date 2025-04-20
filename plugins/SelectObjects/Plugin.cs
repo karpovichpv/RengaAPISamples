@@ -1,19 +1,17 @@
 ﻿using Renga;
 
-namespace ButtonsNet8
+namespace SelectObjects
 {
 	public class Plugin : IPlugin
 	{
 		private ISelection? _selection;
 		private SelectionEventSource? _selectionEventSource;
-		private IApplication? _app;
 
 		public bool Initialize(string pluginFolder)
 		{
-			IApplication app = new Renga.Application();
+			IApplication app = new Application();
 
 			_selection = app.Selection;
-			_app = app;
 
 			_selectionEventSource = new SelectionEventSource(app.Selection);
 			_selectionEventSource.ModelSelectionChanged += OnModelSelectionChanged;
@@ -43,6 +41,7 @@ namespace ButtonsNet8
 				if (selectedObjects.Length != 0)
 				{
 					IModelObject modelObject = modelObjectCollection.GetById(selectedObjects.First());
+
 				}
 			}
 		}

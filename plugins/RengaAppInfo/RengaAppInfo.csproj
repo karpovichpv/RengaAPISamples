@@ -32,4 +32,8 @@
 		<Exec Command="copy /Y &quot;$(ProjectDir)$(ProjectName).rndesc&quot; &quot;$(RENGA_INSTALL_DIR)\Plugins\$(ProjectName)\$(ProjectName).rndesc&quot;" />
 	</Target>
 
+	<PropertyGroup>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
 </Project>
