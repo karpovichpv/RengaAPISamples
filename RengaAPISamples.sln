@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectObjects", "plugins\Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RengaAppInfo", "plugins\RengaAppInfo\RengaAppInfo.csproj", "{1ACD60E2-790D-4352-8B3D-19700D9BCC6D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColumnInfo", "plugins\ColumnInfo\ColumnInfo.csproj", "{F6F59621-4BE4-48AA-AC90-FD00858394D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{1ACD60E2-790D-4352-8B3D-19700D9BCC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ACD60E2-790D-4352-8B3D-19700D9BCC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ACD60E2-790D-4352-8B3D-19700D9BCC6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F59621-4BE4-48AA-AC90-FD00858394D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F59621-4BE4-48AA-AC90-FD00858394D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F59621-4BE4-48AA-AC90-FD00858394D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F59621-4BE4-48AA-AC90-FD00858394D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{AB5FC84F-E21A-4035-95D4-04A5188A55D9} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 		{D7F7C520-6040-4EAB-AD8E-BE6E4517AB41} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 		{1ACD60E2-790D-4352-8B3D-19700D9BCC6D} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
+		{F6F59621-4BE4-48AA-AC90-FD00858394D0} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F88347E4-EB29-4AE1-A675-D822226ED20F}
