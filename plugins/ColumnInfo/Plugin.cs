@@ -70,7 +70,13 @@ namespace ColumnInfo
 			foreach (object obj in array)
 			{
 				if (obj is int id)
-					builder.AppendLine($"id:{id}");
+				{
+					IModel model = project.Model;
+					IModelObject modelObject = model.GetObjects().GetById(id);
+
+					ColumnInfoGetter getter = new(modelObject);
+					return getter.Get();
+				}
 				else
 					builder.Append($"obj:{obj.GetType()}");
 			}
