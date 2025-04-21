@@ -74,11 +74,9 @@ namespace ColumnInfo
 					IModel model = project.Model;
 					IModelObject modelObject = model.GetObjects().GetById(id);
 
-					ColumnInfoGetter getter = new(modelObject);
+					ColumnInfoGetter getter = new(modelObject, project);
 					return getter.Get();
 				}
-				else
-					builder.Append($"obj:{obj.GetType()}");
 			}
 
 			return builder.ToString();
