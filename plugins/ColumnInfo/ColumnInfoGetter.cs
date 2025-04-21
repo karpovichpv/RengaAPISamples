@@ -10,13 +10,16 @@ namespace ColumnInfo
 
 		public string Get()
 		{
-			StringBuilder builder = new();
+			if (_modelObject is not IColumnParams)
+				return "Object isn't a column";
 
+			StringBuilder builder = new();
 			if (_modelObject is IColumnParams parameters)
 			{
 				AddParams(builder, parameters);
 				AddStyleParams(builder, parameters);
 			}
+
 			return builder.ToString();
 		}
 

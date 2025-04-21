@@ -67,8 +67,10 @@ namespace ColumnInfo
 
 			Array array = selection.GetSelectedObjects();
 			StringBuilder builder = new();
-			foreach (object obj in array)
+			if (array.Length != 0)
 			{
+				object? obj = array.GetValue(0);
+
 				if (obj is int id)
 				{
 					IModel model = project.Model;
