@@ -1,87 +1,80 @@
 ﻿using Renga;
-using System.Text;
 
 namespace ContextMenu
 {
 	public class Plugin : IPlugin
 	{
-		private readonly List<ActionEventSource> _actionEventSources = [];
-		private IApplication? _app;
+		private readonly List<ActionEventSource> _eventSources = [];
+		private IUI? _ui;
+		private IContextMenu? _contextMenu;
 
 		public bool Initialize(string pluginFolder)
 		{
 			IApplication app = new Application();
-			_app = app;
+
 			IUI ui = app.UI;
+			_ui = ui;
+			IContextMenu contextMenu = ui.CreateContextMenu();
+			_contextMenu = contextMenu;
+			IAction action1 = ui.CreateAction();
+			action1.DisplayName = "Node1";
 
-			IUIPanelExtension panelExtension = ui.CreateUIPanelExtension();
+			IAction action2 = ui.CreateAction();
+			action2.DisplayName = "Node2";
 
-			panelExtension.AddToolButton(CreateAction(ui));
-			ui.AddExtensionToPrimaryPanel(panelExtension);
-			ui.AddExtensionToActionsPanel(panelExtension, ViewType.ViewType_View3D);
+			IContextMenuNodeItem nodeItem = contextMenu.AddNodeItem();
+			nodeItem.AddActionItem(action1);
+			nodeItem.AddActionItem(action2);
+
+			contextMenu.AddSeparator();
+
+			AddMenuItem("Message from sample", (s, e) =>
+			{
+				_ui.ShowMessageBox(MessageIcon.MessageIcon_Info, "Message from sample", "Context menu clicked");
+			});
+
+			AddMenuItem("Add item", (s, e) =>
+			{
+				IContextMenuNodeItem nodeItem = _contextMenu.AddNodeItem();
+				nodeItem.DisplayName = "New node";
+
+				Update();
+			});
+
+			Update();
 
 			return true;
 		}
 
-
 		public void Stop()
 		{
-			foreach (ActionEventSource eventSource in _actionEventSources)
+			foreach (ActionEventSource eventSource in _eventSources)
 				eventSource.Dispose();
 
-			_actionEventSources.Clear();
+			_eventSources.Clear();
 		}
 
-		private IAction CreateAction(IUI ui)
+		private void AddMenuItem(string displayName, EventHandler handler)
 		{
-			IAction action = ui.CreateAction();
-
-			ActionEventSource eventSource = new(action);
-			eventSource.Triggered += (obj, args) =>
+			if (_ui is not null)
 			{
-				string columnInfo = GetColumnInfo();
-				ui.ShowMessageBox(MessageIcon.MessageIcon_Info, "sample plugin", columnInfo);
-			};
+				IAction action = _ui.CreateAction();
+				action.DisplayName = displayName;
+				ActionEventSource actionEventSource = new(action);
+				actionEventSource.Triggered += handler;
+				_eventSources.Add(actionEventSource);
 
-			_actionEventSources.Add(eventSource);
-			return action;
+				_contextMenu?.AddActionItem(action);
+			}
 		}
 
-		private string GetColumnInfo()
+		private void Update()
 		{
-			IProject? project = null;
-			ISelection? selection = null;
-			if (_app is not null)
-			{
-				project = _app.Project;
-				selection = _app.Selection;
-			}
-
-			if (project is null)
-				return $"Project is null";
-
-			if (selection is null)
-			{
-				return "Nothing was selected";
-			}
-
-			Array array = selection.GetSelectedObjects();
-			StringBuilder builder = new();
-			if (array.Length != 0)
-			{
-				object? obj = array.GetValue(0);
-
-				if (obj is int id)
-				{
-					IModel model = project.Model;
-					IModelObject modelObject = model.GetObjects().GetById(id);
-
-					ColumnInfoGetter getter = new(modelObject, project);
-					return getter.Get();
-				}
-			}
-
-			return builder.ToString();
+			_ui?.AddContextMenu(
+				new Guid(),
+				_contextMenu,
+				ViewType.ViewType_View3D,
+				ContextMenuShowCase.ContextMenuShowCase_Selection);
 		}
 	}
 }
