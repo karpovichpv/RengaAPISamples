@@ -5,13 +5,11 @@ namespace ControlStateManagement
 	internal class Button
 	{
 		private readonly IUI _ui;
-		private readonly string _tooltip;
 		private readonly ActionEventSource _eventSource;
 
 		public Button(IUI ui, string tooltip)
 		{
 			_ui = ui;
-			_tooltip = tooltip;
 			Action = ui.CreateAction();
 			Action.ToolTip = tooltip;
 			_eventSource = new ActionEventSource(Action);
@@ -20,7 +18,7 @@ namespace ControlStateManagement
 
 		public IAction Action { get; }
 
-		private void OnActionEventsTriggered(object? sender, EventArgs e)
+		protected virtual void OnActionEventsTriggered(object? sender, EventArgs e)
 		{
 			_ui.ShowMessageBox(
 				MessageIcon.MessageIcon_Info,
