@@ -17,7 +17,6 @@ namespace ControlStateManagement
 			b2.AddToPanel(panelExtension);
 			b2.AddLinkedButton(b1);
 
-
 			ui.AddExtensionToPrimaryPanel(panelExtension);
 
 			return true;

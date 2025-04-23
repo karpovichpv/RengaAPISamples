@@ -2,6 +2,11 @@
 
 namespace ControlStateManagement
 {
+	/// <summary>
+	/// Кнопка контролируящая свойство Enable у другой кнопки
+	/// </summary>
+	/// <param name="ui"></param>
+	/// <param name="tooltip"></param>
 	internal class ModifyStateButton(IUI ui, string tooltip)
 		: Button(ui, tooltip)
 	{

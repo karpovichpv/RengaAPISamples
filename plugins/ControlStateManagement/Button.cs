@@ -2,6 +2,9 @@
 
 namespace ControlStateManagement
 {
+	/// <summary>
+	/// Основная кнопка, которая совершает действие
+	/// </summary>
 	internal class Button
 	{
 		private readonly IUI _ui;
