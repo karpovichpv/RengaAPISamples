@@ -27,10 +27,12 @@ namespace ExportGeometry
 
 		private void OnExportObjectsButtonClicked(object? sender, EventArgs e)
 		{
+			Exporter exporter = new();
+			string exportString = exporter.Export();
 			_ui?.ShowMessageBox(
 				MessageIcon.MessageIcon_Info,
 				"Export objects",
-				"Exported objects");
+				exportString);
 		}
 
 		public void Stop()
