@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContextMenu", "plugins\Cont
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlStateManagement", "plugins\ControlStateManagement\ControlStateManagement.csproj", "{116D0F8C-3AA3-4762-8CF9-33B6BEB2113C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportGeometry", "plugins\ExportGeometry\ExportGeometry.csproj", "{824638C1-D246-4E06-ABD0-F43C382FE254}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{116D0F8C-3AA3-4762-8CF9-33B6BEB2113C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{116D0F8C-3AA3-4762-8CF9-33B6BEB2113C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{116D0F8C-3AA3-4762-8CF9-33B6BEB2113C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{824638C1-D246-4E06-ABD0-F43C382FE254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{824638C1-D246-4E06-ABD0-F43C382FE254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{824638C1-D246-4E06-ABD0-F43C382FE254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{824638C1-D246-4E06-ABD0-F43C382FE254}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{F6F59621-4BE4-48AA-AC90-FD00858394D0} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 		{961AD82A-0F1D-46A6-A6E2-6E9D7892EDEA} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 		{116D0F8C-3AA3-4762-8CF9-33B6BEB2113C} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
+		{824638C1-D246-4E06-ABD0-F43C382FE254} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F88347E4-EB29-4AE1-A675-D822226ED20F}
