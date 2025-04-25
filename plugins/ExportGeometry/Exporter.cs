@@ -6,11 +6,13 @@ namespace ExportGeometry
 {
 	internal class Exporter
 	{
+		private readonly ISelection _selection;
 		private readonly IDataExporter _dataExporter;
 
 		public Exporter()
 		{
 			IApplication app = new Application();
+			_selection = app.Selection;
 			_dataExporter = app.Project.DataExporter;
 		}
 
@@ -18,10 +20,15 @@ namespace ExportGeometry
 		{
 			IExportedObject3DCollection objects = _dataExporter.GetObjects3D();
 			StringBuilder builder = new();
+			Array selectedObjects = _selection.GetSelectedObjects();
 
-			for (int i = 0; i < objects.Count; i++)
+			object? firstId = selectedObjects.GetValue(0);
+
+			if (firstId is not null)
 			{
-				IExportedObject3D obj = objects.Get(i);
+				int id = (int)firstId;
+
+				IExportedObject3D obj = objects.Get(id);
 				builder.AppendLine($"ObjectType: {obj.ModelObjectType}");
 				for (int j = 0; j < obj.MeshCount; j++)
 				{
