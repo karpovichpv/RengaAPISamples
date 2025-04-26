@@ -1,0 +1,9 @@
+﻿<RengaPlugin>
+	<Name>RebarQuantity</Name>
+	<Version>1.0</Version>
+	<Copyright>Pavel Karpovich</Copyright>
+	<RequiredAPIVersion>2.30</RequiredAPIVersion>
+	<PluginType>net8</PluginType>
+	<PluginFilename>C:\other\mygithub\RengaProjects\RengaAPISamples\plugins\RebarQuantity\bin\Debug\net8.0\RebarQuantity.dll</PluginFilename> 
+	<Vendor>Pavel Karpovich</Vendor>
+</RengaPlugin>
