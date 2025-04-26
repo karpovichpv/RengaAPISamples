@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColumnMaterialQuantity", "p
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RebarQuantity", "plugins\RebarQuantity\RebarQuantity.csproj", "{74889D95-4C5D-4468-B9DC-AFDF61F8E947}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectPlacementModifying", "plugins\ObjectPlacementModifying\ObjectPlacementModifying.csproj", "{AD2D8468-DF5C-4C9A-B5FC-CA309FF59FFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{74889D95-4C5D-4468-B9DC-AFDF61F8E947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74889D95-4C5D-4468-B9DC-AFDF61F8E947}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74889D95-4C5D-4468-B9DC-AFDF61F8E947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD2D8468-DF5C-4C9A-B5FC-CA309FF59FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD2D8468-DF5C-4C9A-B5FC-CA309FF59FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD2D8468-DF5C-4C9A-B5FC-CA309FF59FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD2D8468-DF5C-4C9A-B5FC-CA309FF59FFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +120,7 @@ Global
 		{CF34AD07-C2DC-4C7C-B89C-690EEDFA3656} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 		{40510B63-C31E-4E30-8BFD-E860624878CB} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 		{74889D95-4C5D-4468-B9DC-AFDF61F8E947} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
+		{AD2D8468-DF5C-4C9A-B5FC-CA309FF59FFB} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F88347E4-EB29-4AE1-A675-D822226ED20F}

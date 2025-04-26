@@ -1,6 +1,6 @@
 ﻿using Renga;
 
-namespace ButtonsNet8
+namespace CreateObjects
 {
 	public class Plugin : IPlugin
 	{

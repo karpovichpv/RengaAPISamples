@@ -16,6 +16,7 @@ namespace ContextMenu
 			_ui = ui;
 			IContextMenu contextMenu = ui.CreateContextMenu();
 			_contextMenu = contextMenu;
+
 			IAction action1 = ui.CreateAction();
 			action1.DisplayName = "Node1";
 
@@ -23,6 +24,7 @@ namespace ContextMenu
 			action2.DisplayName = "Node2";
 
 			IContextMenuNodeItem nodeItem = contextMenu.AddNodeItem();
+
 			nodeItem.AddActionItem(action1);
 			nodeItem.AddActionItem(action2);
 
