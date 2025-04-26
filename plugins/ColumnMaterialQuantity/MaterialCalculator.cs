@@ -3,14 +3,9 @@ using System.Text;
 
 namespace ColumnMaterialQuantity
 {
-	internal class MaterialCalculator
+	internal class MaterialCalculator(IModelObject? column)
 	{
-		private readonly IModelObject? _column;
-
-		public MaterialCalculator(IModelObject? column)
-		{
-			_column = column;
-		}
+		private readonly IModelObject? _column = column;
 
 		internal string Calculate()
 		{
