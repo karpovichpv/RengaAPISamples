@@ -1,0 +1,9 @@
+﻿<RengaPlugin>
+	<Name>MaterialExport</Name>
+	<Version>1.0</Version>
+	<Copyright>Pavel Karpovich</Copyright>
+	<RequiredAPIVersion>2.30</RequiredAPIVersion>
+	<PluginType>net8</PluginType>	
+	<PluginFilename>C:\other\mygithub\RengaProjects\RengaAPISamples\plugins\MaterialExport\bin\Debug\net8.0\MaterialExport.dll</PluginFilename> 
+	<Vendor>Pavel Karpovich</Vendor>
+</RengaPlugin>
