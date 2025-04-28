@@ -1,6 +1,6 @@
 ﻿using Renga;
 
-namespace PropertiesAndParameters
+namespace Properties
 {
 	public class Plugin : IPlugin
 	{

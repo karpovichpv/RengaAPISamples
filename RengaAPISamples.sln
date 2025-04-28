@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RebarQuantity", "plugins\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectPlacementModifying", "plugins\ObjectPlacementModifying\ObjectPlacementModifying.csproj", "{AD2D8468-DF5C-4C9A-B5FC-CA309FF59FFB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertiesAndParameters", "plugins\PropertiesAndParameters\PropertiesAndParameters.csproj", "{5D2B49E7-9611-4779-BD55-192D79B2BBB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Properties", "plugins\Properties\Properties.csproj", "{5D2B49E7-9611-4779-BD55-192D79B2BBB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
