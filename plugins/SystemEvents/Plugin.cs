@@ -35,7 +35,7 @@ namespace SystemEvents
 
 		private void OnProjectSaved(string obj)
 		{
-			int msgboxID = MessageBox(IntPtr.Zero,
+			_ = MessageBox(IntPtr.Zero,
 						  "Project saved",
 						  MessageHeader,
 						  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
@@ -43,7 +43,7 @@ namespace SystemEvents
 
 		private void OnProjectOpened(string obj)
 		{
-			int msgboxID = MessageBox(IntPtr.Zero,
+			_ = MessageBox(IntPtr.Zero,
 						  "Project opened",
 						  MessageHeader,
 						  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
@@ -51,7 +51,7 @@ namespace SystemEvents
 
 		private void OnProjectCreate()
 		{
-			int msgboxID = MessageBox(IntPtr.Zero,
+			_ = MessageBox(IntPtr.Zero,
 						  "Project create",
 						  MessageHeader,
 						  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
@@ -59,7 +59,7 @@ namespace SystemEvents
 
 		private void OnProjectClosed()
 		{
-			int msgboxID = MessageBox(IntPtr.Zero,
+			_ = MessageBox(IntPtr.Zero,
 						  "On project close",
 						  MessageHeader,
 						  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
