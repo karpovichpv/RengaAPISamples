@@ -1,60 +1,95 @@
 ﻿using Renga;
+using System.Runtime.InteropServices;
 
-namespace Parameters
+namespace SystemEvents
 {
 	public class Plugin : IPlugin
 	{
-		private readonly List<ActionEventSource> _eventSources = [];
-		private Application? _app;
-		private IUI? _ui;
-		private IUIPanelExtension? _panelExtension;
+		[DllImport("user32.dll", CharSet = CharSet.Unicode)]
+		static extern int MessageBox(nint hWnd, string text, string caption, uint type);
+
+		private const uint MB_ICONQUESTION = 0x00000020;
+		private const uint MB_ICONINFORMATION = 0x00000040;
+		private const uint MB_OK = 0x00000000;
+		private const uint MB_YESNO = 0x00000004;
+		private const uint MB_DEFBUTTON1 = 0x00000000;
+		private const int IDNO = 7;
+		private const string MessageHeader = "Example of Renga event processing";
+
+		private ApplicationEventSource? _appEvents;
 
 		public bool Initialize(string pluginFolder)
 		{
-			_app = new Application();
+			Application _app = new Application();
+			_appEvents = new ApplicationEventSource(_app);
+			_appEvents.BeforeApplicationClose += OnBeforeApplicationClose;
+			_appEvents.BeforeProjectClose += OnBeforeProjectClosed;
+			_appEvents.ProjectClosed += OnProjectClosed;
+			_appEvents.ProjectCreated += OnProjectCreate;
+			_appEvents.ProjectOpened += OnProjectOpened;
+			_appEvents.ProjectSaved += OnProjectSaved;
 
-			_ui = _app.UI;
-			_panelExtension = _ui.CreateUIPanelExtension();
-
-
-			CreateMessageBox(
-				"Plate styles parameters",
-				"Plate styles parameters",
-				PluginHelpers.ShowPlateStylesParameters);
-
-			_ui.AddExtensionToPrimaryPanel(_panelExtension);
 
 			return true;
 		}
 
-		private void CreateMessageBox(
-			string tooltip,
-			string title,
-			Func<IApplication, string> callBack)
+		private void OnProjectSaved(string obj)
 		{
-			if (_ui is not null && _app is not null)
-			{
-				var action = _ui.CreateAction();
-				action.ToolTip = tooltip;
-				_panelExtension?.AddToolButton(action);
+			int msgboxID = MessageBox(IntPtr.Zero,
+						  "Project saved",
+						  MessageHeader,
+						  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
+		}
 
-				ActionEventSource events = new(action);
-				events.Triggered += (sender, arguments) =>
-				{
-					_ui.ShowMessageBox(
-						MessageIcon.MessageIcon_Info,
-						title,
-						callBack?.Invoke(_app));
-				};
-			}
+		private void OnProjectOpened(string obj)
+		{
+			int msgboxID = MessageBox(IntPtr.Zero,
+						  "Project opened",
+						  MessageHeader,
+						  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
+		}
+
+		private void OnProjectCreate()
+		{
+			int msgboxID = MessageBox(IntPtr.Zero,
+						  "Project create",
+						  MessageHeader,
+						  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
+		}
+
+		private void OnProjectClosed()
+		{
+			int msgboxID = MessageBox(IntPtr.Zero,
+						  "On project close",
+						  MessageHeader,
+						  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
+		}
+
+		private void OnBeforeProjectClosed(ProjectCloseEventArgs args)
+		{
+			int msgboxID = MessageBox(IntPtr.Zero,
+			  "Before closing project",
+			  MessageHeader,
+			  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
+
+			if (msgboxID == IDNO)
+				args.Prevent();
+		}
+
+		private void OnBeforeApplicationClose(ApplicationCloseEventArgs args)
+		{
+			int msgboxID = MessageBox(IntPtr.Zero,
+						  "Before application close",
+						  MessageHeader,
+						  MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1);
+
+			if (msgboxID == IDNO)
+				args.Prevent();
 		}
 
 		public void Stop()
 		{
-			foreach (ActionEventSource eventSource in _eventSources)
-				eventSource.Dispose();
-
-			_eventSources.Clear();
+			_appEvents?.Dispose();
 		}
 	}
 }
