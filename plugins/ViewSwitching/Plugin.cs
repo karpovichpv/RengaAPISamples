@@ -17,6 +17,7 @@ namespace ViewSwitching
 			IUIPanelExtension extension = ui.CreateUIPanelExtension();
 			extension.AddToolButton(CreateMainViewAction(ui));
 			extension.AddToolButton(CreateAssemblyViewAction(ui));
+			extension.AddToolButton(CreateLevelViewAction(ui));
 			ui.AddExtensionToPrimaryPanel(extension);
 
 			return true;
@@ -73,6 +74,40 @@ namespace ViewSwitching
 
 					List<int> groupedIds = assemblyIds.Distinct().ToList();
 					_app.OpenViewByEntity(groupedIds.First());
+				}
+			};
+
+			_eventSources.Add(events);
+
+			return action;
+		}
+
+		private IAction CreateLevelViewAction(IUI ui)
+		{
+			IAction action = ui.CreateAction();
+			action.DisplayName = "LevelViewAction";
+
+			var events = new ActionEventSource(action);
+			events.Triggered += (sender, arguments) =>
+			{
+				if (_app is not null)
+				{
+					IModelObjectCollection allObjects = _app.Project.Model.GetObjects();
+					ILevelObject? level = null;
+					for (int i = 0; i < allObjects.Count; i++)
+					{
+						IModelObject obj = allObjects.GetByIndex(i);
+						if (obj is ILevelObject levelObject)
+						{
+							level = levelObject;
+							break;
+						}
+					}
+
+					if (level is not null)
+					{
+						_app.OpenViewByEntity(level.LevelId);
+					}
 				}
 			};
 
