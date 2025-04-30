@@ -45,6 +45,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewSwitching", "plugins\Vi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisualStylesAndVisibility", "plugins\VisualStylesAndVisibility\VisualStylesAndVisibility.csproj", "{43D68ABE-7921-485D-B9F9-16D5ED76D81A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{D9DBF8AA-FBC9-41EF-9C67-B3E4AD1864D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNet8Application", "applications\TestNet8Application\TestNet8Application.csproj", "{1CC9E5B5-345A-4581-B4B6-184F5AD69A24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +135,10 @@ Global
 		{43D68ABE-7921-485D-B9F9-16D5ED76D81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43D68ABE-7921-485D-B9F9-16D5ED76D81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43D68ABE-7921-485D-B9F9-16D5ED76D81A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC9E5B5-345A-4581-B4B6-184F5AD69A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC9E5B5-345A-4581-B4B6-184F5AD69A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC9E5B5-345A-4581-B4B6-184F5AD69A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC9E5B5-345A-4581-B4B6-184F5AD69A24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,6 +164,7 @@ Global
 		{4D75C2BE-6F5B-410B-9D73-FB259B39A828} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 		{A6F6209E-355C-43A6-945E-E3AA5EF0572E} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 		{43D68ABE-7921-485D-B9F9-16D5ED76D81A} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
+		{1CC9E5B5-345A-4581-B4B6-184F5AD69A24} = {D9DBF8AA-FBC9-41EF-9C67-B3E4AD1864D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F88347E4-EB29-4AE1-A675-D822226ED20F}

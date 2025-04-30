@@ -8,9 +8,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<COMFileReference Include="..\..\..\RengaSDK\tlb\RengaCOMAPI.tlb">
-
-		</COMFileReference>
+		<COMFileReference Include="..\..\..\RengaSDK\tlb\RengaCOMAPI.tlb"></COMFileReference>
 	</ItemGroup>
 
 	<ItemGroup>
