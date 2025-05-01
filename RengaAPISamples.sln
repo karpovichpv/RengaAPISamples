@@ -47,9 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisualStylesAndVisibility",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{D9DBF8AA-FBC9-41EF-9C67-B3E4AD1864D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNet8Application", "applications\TestNet8Application\TestNet8Application.csproj", "{1CC9E5B5-345A-4581-B4B6-184F5AD69A24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestNet8Application", "applications\TestNet8Application\TestNet8Application.csproj", "{1CC9E5B5-345A-4581-B4B6-184F5AD69A24}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportDrawings", "applications\ExportDrawings\ExportDrawings.csproj", "{AC9CC664-05B8-4EF2-AC12-DED5CA3B4CF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Export", "applications\Export\Export.csproj", "{AC9CC664-05B8-4EF2-AC12-DED5CA3B4CF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
