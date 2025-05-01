@@ -7,6 +7,8 @@ namespace ExportDrawings
 	{
 		public static void Main(string[] args)
 		{
+			ArgumentNullException.ThrowIfNull(args);
+
 			IApplication application = new Application();
 			if (application is not null)
 			{
