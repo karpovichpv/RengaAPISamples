@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<COMFileReference Include="..\..\..\RengaSDK\tlb\RengaCOMAPI.tlb"></COMFileReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Renga.NET8.PluginUtility">
+	    <HintPath>..\..\..\RengaSDK\Net\Renga.NET8.PluginUtility.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+</Project>

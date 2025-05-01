@@ -54,7 +54,6 @@ namespace CreateObjects
 			action.DisplayName = displayName;
 			action.Icon = _icon;
 
-
 			ActionEventSource events = new(action);
 			events.Triggered += (s, e) =>
 			{
