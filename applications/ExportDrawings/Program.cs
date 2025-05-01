@@ -29,7 +29,11 @@ public class Program
 				for (int i = 0; i < drawings.Count; i++)
 				{
 					IDrawing drawing = drawings.Get(i);
-					drawing.ExportToPdf(Path.Combine(path, drawing.Name), true);
+					string filePath = Path.Combine(path, drawing.Name);
+					drawing.ExportToPdf(filePath, true);
+					drawing.ExportToDwg(filePath, AutocadVersion.AutocadVersion_v2000, true);
+					drawing.ExportToDxf(filePath, AutocadVersion.AutocadVersion_v2000, true);
+					drawing.ExportToOpenXps(filePath, true);
 					Console.WriteLine($"Drawing {drawing.Name} was exported");
 				}
 			}
