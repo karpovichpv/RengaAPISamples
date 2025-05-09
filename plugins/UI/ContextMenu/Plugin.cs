@@ -77,6 +77,7 @@ namespace ContextMenu
 				_eventSources.Add(actionEventSource);
 
 				_contextMenu?.AddActionItem(action);
+				_contextMenu.
 			}
 		}
 

@@ -17,7 +17,7 @@ namespace ButtonsNet8
 			_icon.LoadFromFile(icoPath);
 
 			IUIPanelExtension panelExtension = ui.CreateUIPanelExtension();
-			AddOrdynaryToolButton(ui, panelExtension);
+			panelExtension.AddToolButton(CreateAction(ui, "OrdynaryButton"));
 			AddDropDownButton(ui, panelExtension);
 			AddSplitButton(ui, panelExtension);
 
@@ -64,8 +64,6 @@ namespace ButtonsNet8
 
 		private void AddOrdynaryToolButton(IUI ui, IUIPanelExtension panelExtension)
 		{
-			panelExtension.AddToolButton(
-			  CreateAction(ui, "OrdynaryButton"));
 		}
 
 		public void Stop()
