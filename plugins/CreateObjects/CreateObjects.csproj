@@ -19,7 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="ButtonsNet8.rndesc">
+	  <None Update="CreateObjects.rndesc">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	  <None Update="ico.png">

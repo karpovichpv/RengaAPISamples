@@ -8,18 +8,18 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<COMFileReference Include="..\..\..\RengaSDK\tlb\RengaCOMAPI.tlb">
+		<COMFileReference Include="..\..\..\..\RengaSDK\tlb\RengaCOMAPI.tlb">
 		</COMFileReference>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Reference Include="Renga.NET8.PluginUtility">
-	    <HintPath>..\..\..\RengaSDK\Net\Renga.NET8.PluginUtility.dll</HintPath>
+	    <HintPath>..\..\..\..\RengaSDK\Net\Renga.NET8.PluginUtility.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="ButtonsNet8.rndesc">
+	  <None Update="ContextMenu.rndesc">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	  <None Update="ico.png">
@@ -31,5 +31,13 @@
 		<Exec Command="if not exist &quot;$(RENGA_INSTALL_DIR)\Plugins\$(ProjectName)&quot; mkdir &quot;$(RENGA_INSTALL_DIR)\Plugins\$(ProjectName)&quot;" />
 		<Exec Command="copy /Y &quot;$(ProjectDir)$(ProjectName).rndesc&quot; &quot;$(RENGA_INSTALL_DIR)\Plugins\$(ProjectName)\$(ProjectName).rndesc&quot;" />
 	</Target>
+
+	<PropertyGroup>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+	</PropertyGroup>
 
 </Project>
