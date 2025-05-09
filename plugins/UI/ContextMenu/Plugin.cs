@@ -14,19 +14,11 @@ namespace ContextMenu
 
 			IUI ui = app.UI;
 			_ui = ui;
+
 			IContextMenu contextMenu = ui.CreateContextMenu();
 			_contextMenu = contextMenu;
 
-			IAction action1 = ui.CreateAction();
-			action1.DisplayName = "Node1";
-
-			IAction action2 = ui.CreateAction();
-			action2.DisplayName = "Node2";
-
-			IContextMenuNodeItem nodeItem = contextMenu.AddNodeItem();
-
-			nodeItem.AddActionItem(action1);
-			nodeItem.AddActionItem(action2);
+			AddNodeItems(ui, contextMenu);
 
 			contextMenu.AddSeparator();
 
@@ -34,7 +26,6 @@ namespace ContextMenu
 			{
 				_ui.ShowMessageBox(MessageIcon.MessageIcon_Info, "Message from sample", "Context menu clicked");
 			});
-
 			AddMenuItem("Add item", (s, e) =>
 			{
 				IContextMenuNodeItem nodeItem = _contextMenu.AddNodeItem();
@@ -46,6 +37,24 @@ namespace ContextMenu
 			Update();
 
 			return true;
+		}
+
+		private static void AddNodeItems(IUI ui, IContextMenu contextMenu)
+		{
+			IContextMenuNodeItem nodeItem = contextMenu.AddNodeItem();
+			nodeItem.DisplayName = "NodeItem";
+
+			IAction action1 = ui.CreateAction();
+			action1.DisplayName = "Node1";
+			action1.Checkable = true;
+			action1.Checked = true;
+
+			IAction action2 = ui.CreateAction();
+			action2.DisplayName = "Node2";
+			action2.Enabled = false;
+
+			nodeItem.AddActionItem(action1);
+			nodeItem.AddActionItem(action2);
 		}
 
 		public void Stop()
@@ -62,6 +71,7 @@ namespace ContextMenu
 			{
 				IAction action = _ui.CreateAction();
 				action.DisplayName = displayName;
+				action.ToolTip = displayName;
 				ActionEventSource actionEventSource = new(action);
 				actionEventSource.Triggered += handler;
 				_eventSources.Add(actionEventSource);
