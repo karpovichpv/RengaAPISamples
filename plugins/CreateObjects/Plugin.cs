@@ -32,6 +32,8 @@ namespace CreateObjects
 			dropDownButton.AddAction(CreateObject(ui, "TextObject", ObjectTypes.TextObject)); //+
 			dropDownButton.AddAction(CreateObject(ui, "Window", ObjectTypes.Window));
 			dropDownButton.AddAction(CreateObject(ui, "Floor", ObjectTypes.Floor));
+			dropDownButton.AddAction(CreateObject(ui, "Wall foundation", ObjectTypes.WallFoundation));
+			dropDownButton.AddAction(CreateObject(ui, "Wall", ObjectTypes.Wall));
 
 			panelExtension.AddDropDownButton(dropDownButton);
 
