@@ -38,6 +38,8 @@ namespace CreateObjects
 			dropDownButton.AddAction(CreateObject(ui, "Hatch", ObjectTypes.Hatch));
 			dropDownButton.AddAction(CreateObject(ui, "Stair", ObjectTypes.Stair));
 			dropDownButton.AddAction(CreateObject(ui, "Railing", ObjectTypes.Railing));
+			dropDownButton.AddAction(CreateObject(ui, "Room", ObjectTypes.Room));
+			dropDownButton.AddAction(CreateObject(ui, "Roof", ObjectTypes.Roof));
 
 			panelExtension.AddDropDownButton(dropDownButton);
 
