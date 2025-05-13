@@ -17,17 +17,14 @@ namespace CreateFloor
 			_icon.LoadFromFile(icoPath);
 
 			IUIPanelExtension panelExtension = ui.CreateUIPanelExtension();
-
-			// DropDownButton:
 			IDropDownButton dropDownButton = ui.CreateDropDownButton();
 			dropDownButton.ToolTip = "Net8 DropDownButton";
 
-			dropDownButton.AddAction(CreateObject(ui, "Floor", ObjectTypes.Floor));
+			dropDownButton.AddAction(CreateFloor(ui));
 
 			panelExtension.AddDropDownButton(dropDownButton);
 
 			ui.AddExtensionToPrimaryPanel(panelExtension);
-			ui.AddExtensionToActionsPanel(panelExtension, ViewType.ViewType_View3D);
 
 			return true;
 		}
@@ -40,36 +37,16 @@ namespace CreateFloor
 			_eventSources.Clear();
 		}
 
-		private IAction CreateObject(IUI ui, string displayName, Guid objGuid)
+		private IAction CreateFloor(IUI ui)
 		{
 			IAction action = ui.CreateAction();
-			action.DisplayName = displayName;
+			action.DisplayName = "Floor";
 			action.Icon = _icon;
 
 			ActionEventSource events = new(action);
 			events.Triggered += (s, e) =>
 			{
-				// With Building or Assembly model
-				Application application = new();
-				IModel model = application.Project.Model;
-
-				INewEntityArgs args = model.CreateNewEntityArgs();
-				args.TypeId = objGuid;
-				Placement3D placement3D = new()
-				{
-					Origin = new() { X = 500, Y = 500, Z = 1000 },
-					xAxis = new() { X = 1, Y = 1, Z = 0 },
-					zAxis = new() { X = 0, Y = 0, Z = 1 }
-				};
-
-				args.Placement3D = placement3D;
-				//args.HostObjectId = AnyLevelId;
-
-				var operation = application.Project.CreateOperation();
-				operation.Start();
-
-				IModelObject newObject = model.CreateObject(args);
-				operation.Apply();
+				PluginHelpers.CreateFloor();
 			};
 
 			_eventSources.Add(events);
