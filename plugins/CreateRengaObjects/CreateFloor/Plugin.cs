@@ -46,9 +46,8 @@ namespace CreateFloor
 			ActionEventSource events = new(action);
 			events.Triggered += (s, e) =>
 			{
-				IModelObject floor = PluginHelpers.CreateFloor();
-				IModelObject opening = PluginHelpers.CreateOpening(floor);
-
+				FloorBuilder floorBuilder = new();
+				floorBuilder.Build();
 			};
 
 			_eventSources.Add(events);
