@@ -16,9 +16,11 @@ internal class FloorBuilder
 	{
 		IModelObject floor = CreateDefaultObject(ObjectTypes.Floor);
 		IModelObject opening = CreateDefaultObject(ObjectTypes.Opening, floor.Id);
+		IModelObject modifiedFloor = ChangeContour(floor);
 
 		return floor;
 	}
+
 
 	private IModelObject CreateDefaultObject(Guid objectGuid, int? hostObjectId = null)
 	{
@@ -39,6 +41,14 @@ internal class FloorBuilder
 		operation.Apply();
 
 		return newObject;
+	}
+
+	private IModelObject ChangeContour(IModelObject floor)
+	{
+		IBaseline2DObject baseLineObject = floor as IBaseline2DObject;
+		ICurve2D currentBaseLine = baseLineObject.GetBaseline();
+		ICurve3D curve3d = currentBaseLine.CreateCurve3D(GetDefaultPlacement());
+		return null;
 	}
 
 	private static Placement3D GetDefaultPlacement()
