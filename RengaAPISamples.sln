@@ -57,6 +57,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{D8A117A4-180B-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateRengaObjects", "CreateRengaObjects", "{4B4C4137-BAB9-4AD9-A53B-821C86CADD61}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateFloor", "plugins\CreateRengaObjects\CreateFloor\CreateFloor.csproj", "{4DD101E6-8AC0-478D-84E2-13689006A051}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +157,10 @@ Global
 		{EAB3AA79-F7AB-4655-88C4-D2D44A97A6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAB3AA79-F7AB-4655-88C4-D2D44A97A6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAB3AA79-F7AB-4655-88C4-D2D44A97A6A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD101E6-8AC0-478D-84E2-13689006A051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD101E6-8AC0-478D-84E2-13689006A051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD101E6-8AC0-478D-84E2-13689006A051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD101E6-8AC0-478D-84E2-13689006A051}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -185,6 +191,7 @@ Global
 		{EAB3AA79-F7AB-4655-88C4-D2D44A97A6A2} = {D9DBF8AA-FBC9-41EF-9C67-B3E4AD1864D5}
 		{D8A117A4-180B-4D60-A9BD-7BA452D3A679} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
 		{4B4C4137-BAB9-4AD9-A53B-821C86CADD61} = {6EEF1863-F5D2-4DBC-9505-A4018E8EEADC}
+		{4DD101E6-8AC0-478D-84E2-13689006A051} = {4B4C4137-BAB9-4AD9-A53B-821C86CADD61}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F88347E4-EB29-4AE1-A675-D822226ED20F}
