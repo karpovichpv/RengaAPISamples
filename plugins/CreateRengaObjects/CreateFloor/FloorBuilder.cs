@@ -16,7 +16,7 @@ internal class FloorBuilder
 	{
 		IModelObject floor = CreateDefaultObject(ObjectTypes.Floor);
 		IModelObject opening = CreateDefaultObject(ObjectTypes.Opening, floor.Id);
-		IModelObject modifiedFloor = ChangeContour(floor);
+		IModelObject modifiedFloor = ChangeContour(opening);
 
 		return floor;
 	}
@@ -45,9 +45,23 @@ internal class FloorBuilder
 
 	private IModelObject ChangeContour(IModelObject floor)
 	{
+		var operation = _application.Project.CreateOperationWithUndo(_model.Id);
+
 		IBaseline2DObject baseLineObject = floor as IBaseline2DObject;
 		ICurve2D currentBaseLine = baseLineObject.GetBaseline();
-		ICurve3D curve3d = currentBaseLine.CreateCurve3D(GetDefaultPlacement());
+		Point2D p1 = new() { X = 100.0, Y = 100.0 };
+		Point2D p2 = new() { X = 200.0, Y = 100.0 };
+		Point2D p3 = new() { X = 200.0, Y = 200.0 };
+		ICurve2D curve1 = _application.Math.CreateLineSegment2D(p1, p2);
+		ICurve2D curve2 = _application.Math.CreateLineSegment2D(p2, p3);
+		ICurve2D curve3 = _application.Math.CreateLineSegment2D(p3, p1);
+		ICurve2D[] curves = [curve1, curve2, curve3,];
+		ICurve2D compositeCurve = _application.Math.CreateCompositeCurve2D(curves);
+
+		operation.Start();
+		baseLineObject.SetBaseline(compositeCurve);
+		operation.Apply();
+
 		return null;
 	}
 
